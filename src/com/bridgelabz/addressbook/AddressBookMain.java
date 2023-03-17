@@ -1,8 +1,27 @@
 package com.bridgelabz.addressbook;
 
-public class AddressBookMain {
-    public static void main(String[] args){
-        System.out.println("Welcome to Address Book Program..");
-    }
+import java.util.Scanner;
 
+public class AddressBookMain {
+    public static void main(String[] args) {
+        System.out.println("Welcome to Address Book Program..");
+        ContactOperationsImpl contacts = new ContactOperationsImpl();
+        Scanner sc = new Scanner(System.in);
+        while (true) {
+            System.out.println("Enter option you want :: ");
+            System.out.println("1.Add contact 2.Edit Contact");
+            int choice = sc.nextInt();
+            switch (choice) {
+                case 1:
+                    contacts.addContact();
+                    break;
+                case 2:
+                    contacts.editContact();
+                    break;
+                default:
+                    System.out.println("Enter a valid option");
+            }
+
+        }
+    }
 }
